@@ -1,0 +1,102 @@
+# Command used to turn on the reader scanning mode
+# to scan RFID tags
+
+# Format of JSON to send to the API as payload to query method
+# - from the top JSON keys only "msid" must be in the JSON
+# - from the set of "prms" keys only those which have "pid": "M"
+#   must be in JSON, because "M" means mandatory parameter
+# - in the JSON to send for parameters in "prms" keys only
+#   the parameter "val" must be filled with data to send to reader,
+#   must not be equal to -1 (server treats -1 as 'empty')
+{
+    "msid": "OP_READ_EPC_TAG",
+    "mtyp": "TYPE_CONF_OPERATE",
+    "init": "INIT_BY_USER",
+    "tmpl": "[ant][iscont][selectread][tid][userdata]",
+    "is-include-len": true,
+    "prms": {
+        "ant": {
+            "pid": "M",
+            "is-fixed-len": true,
+            "type": "U8",
+            "len": 1,
+            "val": -1,
+# "val" is mandatory, put here the integer describing antennas to use:
+# parameter = A1 * 2^0 + A2 * 2^1 + A3 * 2^2 + A4 * 2^3 + A5 * 2^4 + A6 * 2^5 + A7 * 2^6 + A8 * 2^7,
+# where each of A1, A2, . . . A8 – is either equals to 1 if this antenna (1st, 2nd, … 8th) should be used for scan-ning, or equals to 0 if not.
+# Example: use antennas 1, 2, and 6; then Z = 1 * 2^0 + 1 * 2^1 + 1*2^5 = 35.
+# ATTENTION: if reader device has antenna connector, but the physical antenna is not in fact connected, reader CAN reject the start scanning request
+            "is-res-field": false,
+            "OK-value": 0,
+            "text-meaning": {}
+        },
+        "iscont": {
+            "pid": "M",
+            "is-fixed-len": true,
+            "type": "U8",
+            "len": 1,
+            "val": -1,  # mandatory, 0 means scan only once, 1 means turn into continuous scanning mode
+            "is-res-field": false,
+            "OK-value": 0,
+            "text-meaning": {}
+        },
+        "selectread": {
+            "pid": "0x01",
+            "is-fixed-len": false,
+            "type": "U8",
+            "len": 0,
+            "val": -1,  # check Clou Protocol specification
+            "is-res-field": false,
+            "OK-value": 0,
+            "text-meaning": {}
+        },
+        "tid": {
+            "pid": "0x02",
+            "is-fixed-len": true,
+            "type": "U8",
+            "len": 2,
+            "val": -1,  # check Clou Protocol specification
+            "is-res-field": false,
+            "OK-value": 0,
+            "text-meaning": {}
+        },
+        "userdata": {
+            "pid": "0x03",
+            "is-fixed-len": true,
+            "type": "U8",
+            "len": 3,
+            "val": -1,  # check Clou Protocol specification
+            "is-res-field": false,
+            "OK-value": 0,
+            "text-meaning": {}
+        }
+    }
+}
+
+# Format of JSON received in reply from the API
+{
+    "msid": "OP_READ_EPC_TAG",
+    "mtyp": "TYPE_CONF_OPERATE",
+    "init": "INIT_BY_USER",
+    "tmpl": "[startres]",
+    "prms": {
+        "startres": {
+            "pid": "M",
+            "is-fixed-len": true,
+            "type": "U8",
+            "len": 1,
+            "val": -1,  # result of performing the command
+            "is-res-field": true,   # this field is the result field
+            "OK-value": 0,          # to treat reply as success the "val" must equal to 0
+            "text-meaning": {       # reference describing the value of returned "val" field
+                "0": "Configure successfully",
+                "1": "Antenna port parameter error",
+                "2": "Select read parameter error",
+                "3": "TID read parameter error",
+                "4": "User data area read parameter error",
+                "5": "Retention area read parameter error",
+                "6": "Other parameter error"
+            }
+        }
+    }
+}

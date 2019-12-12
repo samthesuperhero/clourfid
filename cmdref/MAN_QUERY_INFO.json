@@ -1,0 +1,78 @@
+{
+    "snd": {
+        "msid": "MAN_QUERY_INFO",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "MAN_QUERY_INFO",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[qi0][qi1][qi2][qi3][rname][timeon]",
+        "prms": {
+            "qi0": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "qi1": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "qi2": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "qi3": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "rname": {
+                "pid": "M",
+                "is-fixed-len": false,
+                "type": "U8",
+                "len": 0,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "timeon": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U32",
+                "len": 4,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            }
+        }
+    }
+}

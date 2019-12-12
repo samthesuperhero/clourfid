@@ -1,0 +1,38 @@
+{
+    "snd": {
+        "msid": "OP_QUERY_RF_BAND",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "OP_QUERY_RF_BAND",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[rfband]",
+        "prms": {
+            "rfband": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {
+                    "0": "920~925MHz",
+                    "1": "840~845MHz",
+                    "2": "840~845MHz & 920~925MHz",
+                    "3": "FCC: 902~928MHz",
+                    "4": "ETSI: 866~868MHz",
+                    "5": "JP: 916.8~920.4MHz",
+                    "6": "TW: 922.25~927.75MHz",
+                    "7": "ID: 923.125~925.125MHz",
+                    "8": "RU: 866.6~867.4MHz"
+                }
+            }
+        }
+    }
+}

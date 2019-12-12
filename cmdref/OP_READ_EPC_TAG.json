@@ -1,0 +1,87 @@
+{
+    "snd": {
+        "msid": "OP_READ_EPC_TAG",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[ant][iscont][selectread][tid][userdata]",
+        "is-include-len": true,
+        "prms": {
+            "ant": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "iscont": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "selectread": {
+                "pid": "0x01",
+                "is-fixed-len": false,
+                "type": "U8",
+                "len": 0,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "tid": {
+                "pid": "0x02",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 2,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "userdata": {
+                "pid": "0x03",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 3,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            }
+        }
+    },
+    "rcv": {
+        "msid": "OP_READ_EPC_TAG",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[startres]",
+        "prms": {
+            "startres": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": true,
+                "OK-value": 0,
+                "text-meaning": {
+                    "0": "Configure successfully",
+                    "1": "Antenna port parameter error",
+                    "2": "Select read parameter error",
+                    "3": "TID read parameter error",
+                    "4": "User data area read parameter error",
+                    "5": "Retention area read parameter error",
+                    "6": "Other parameter error"
+                }
+            }
+        }
+    }
+}

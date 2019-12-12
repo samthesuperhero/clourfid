@@ -1,0 +1,34 @@
+{
+    "snd": {
+        "msid": "MAN_QUERY_RS232_CONF",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "MAN_QUERY_RS232_CONF",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[baud]",
+        "prms": {
+            "baud": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {
+                    "0": "9600 bps",
+                    "1": "19200 bps",
+                    "2": "115200 bps",
+                    "3": "230400 bps",
+                    "4": "460800 bps"
+                }
+            }
+        }
+    }
+}

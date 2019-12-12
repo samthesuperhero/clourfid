@@ -1,0 +1,28 @@
+{
+    "clou-run": "/usr/share/dev/clouweb",         # directory to use runtime for temporary files
+    "log-dir": "/usr/share/dev/clouweb/log",      # logging directory 
+    "cmds-dir": "/usr/share/dev/clouweb/cmdref",  # directory storing command reference JSONs
+    "ntp-service-url": "europe.pool.ntp.org",     # time server for time checks
+    "max-server-time-offset": 0.050,              # max allowed offset of local time with NTP
+    "reply-from-reader-timeout": 3.000,           # max time 
+    "delay-between-reads": 0.100,
+    "reader-no-life-timeout": 30,
+    "tag-param-duplicate-exclude": ["TIME", "SERIES_NUM"],  # don't change, or create issue on the repository
+    "readers-list": [                             # list of reader ids to be use by cloucon.py another processes
+        "msk_cl7206b2"
+    ],
+    "msk_cl7206b2": {                             # description of each reader in the list
+        "reader-mode": "client",       # mode of reader, client or server, client will try to connect to the connector process
+        "host": "",                    # host, leave empty if client
+        "port": 10101,                 # port of the connector to listen to
+        "sock-timeout": 0.100,         # timeout of listening, don't change, or create issue on the repository 
+        "parse-limit": 500,            # parse limit per 1 read, don't change, or create issue on the repository
+        "log-tag-frames": false,       # if true will log all frames with RFID tag data, log will grow dramatically fast
+        "ntp-check-interval": 900.000  # seconds, how frequent to check for NTP
+    },
+    "sequences": [                     # reserved
+        {
+            "on-connect": {}
+        }
+    ]
+}

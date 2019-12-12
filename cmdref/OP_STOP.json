@@ -1,0 +1,31 @@
+{
+    "snd": {
+        "msid": "OP_STOP",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "OP_STOP",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[res]",
+        "prms": {
+            "res": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": true,
+                "OK-value": 0,
+                "text-meaning": {
+                    "0": "Stop successful",
+                    "1": "System error"
+                }
+            }
+        }
+    }
+}

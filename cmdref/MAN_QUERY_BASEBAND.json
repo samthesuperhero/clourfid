@@ -1,0 +1,58 @@
+{
+    "snd": {
+        "msid": "MAN_QUERY_BASEBAND",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "MAN_QUERY_BASEBAND",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[bbsw0][bbsw1][bbsw2][bbsw3]",
+        "prms": {
+            "bbsw0": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "bbsw1": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "bbsw2": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "bbsw3": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "snd": {
+        "msid": "ERR_MID",
+        "mtyp": "TYPE_ERR_WARN",
+        "init": "INIT_BY_READER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "ERR_MID",
+        "mtyp": "TYPE_ERR_WARN",
+        "init": "INIT_BY_READER",
+        "tmpl": "[errtyp][rdrstat][ctrlword][contentlen]",
+        "prms": {
+            "errtyp": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {
+                    "0": "0 error type",
+                    "1": "CRC calibration error",
+                    "2": "wrong MID",
+                    "3": "protocol control word other error",
+                    "4": "current status can not execute the command",
+                    "5": "command list full",
+                    "6": "message parameter incomplete",
+                    "7": "frame length exceed limitation",
+                    "8": "other error"
+                }
+            },
+            "rdrstat": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {
+                    "0": "Idle status",
+                    "1": "Execution status",
+                    "2": "Error status"        
+                }
+            },
+            "ctrlword": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U16",
+                "len": 2,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "contentlen": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U16",
+                "len": 2,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "snd": {
+        "msid": "OP_QUERY_POWER",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "OP_QUERY_POWER",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[ant1][ant2][ant3][ant4][ant5][ant6][ant7][ant8]",
+        "prms": {
+            "ant1": {
+                "pid": "0x01",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant2": {
+                "pid": "0x02",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant3": {
+                "pid": "0x03",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant4": {
+                "pid": "0x04",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant5": {
+                "pid": "0x05",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant6": {
+                "pid": "0x06",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant7": {
+                "pid": "0x07",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "ant8": {
+                "pid": "0x08",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            }
+        }
+    }
+}

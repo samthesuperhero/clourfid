@@ -1,0 +1,17 @@
+{
+    "snd": {
+        "msid": "MAN_RESTART",
+        "mtyp": "TYPE_CONF_MANAGE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "",
+        "mtyp": "",
+        "init": "",
+        "tmpl": "",
+        "prms": {}
+    }
+}

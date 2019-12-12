@@ -1,0 +1,41 @@
+# Command used to stop any reader operation, and if reader is in
+# scanning mode, stop scanning and turn the reader back to idle mode
+
+# Format of JSON to send to the API as payload to query method
+# - from the top JSON keys only "msid" must be in the JSON
+# - from the set of "prms" keys only those which have "pid": "M"
+#   must be in JSON, because "M" means mandatory parameter
+# - in the JSON to send for parameters in "prms" keys only
+#   the parameter "val" must be filled with data to send to reader,
+#   must not be equal to -1 (server treats -1 as 'empty')
+{
+    "msid": "OP_STOP",
+    "mtyp": "TYPE_CONF_OPERATE",
+    "init": "INIT_BY_USER",
+    "tmpl": "",
+    "is-include-len": true,
+    "prms": {}
+}
+
+# Format of JSON received in reply from the API
+{
+    "msid": "OP_STOP",
+    "mtyp": "TYPE_CONF_OPERATE",
+    "init": "INIT_BY_USER",
+    "tmpl": "[res]",
+    "prms": {
+        "res": {
+            "pid": "M",
+            "is-fixed-len": true,
+            "type": "U8",
+            "len": 1,
+            "val": -1,  # result of performing the command
+            "is-res-field": true,   # this field is the result field
+            "OK-value": 0,          # to treat reply as success the "val" must equal to 0
+            "text-meaning": {       # reference describing the value of returned "val" field
+                "0": "Stop successful",
+                "1": "System error"
+            }
+        }
+    }
+}

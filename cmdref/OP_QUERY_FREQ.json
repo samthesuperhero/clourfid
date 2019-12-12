@@ -1,0 +1,38 @@
+{
+    "snd": {
+        "msid": "OP_QUERY_FREQ",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "",
+        "is-include-len": true,
+        "prms": {}
+    },
+    "rcv": {
+        "msid": "OP_QUERY_POWER",
+        "mtyp": "TYPE_CONF_OPERATE",
+        "init": "INIT_BY_USER",
+        "tmpl": "[freqauto][flist]",
+        "prms": {
+            "freqauto": {
+                "pid": "M",
+                "is-fixed-len": true,
+                "type": "U8",
+                "len": 1,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            },
+            "flist": {
+                "pid": "M",
+                "is-fixed-len": false,
+                "type": "U8",
+                "len": 0,
+                "val": -1,
+                "is-res-field": false,
+                "OK-value": 0,
+                "text-meaning": {}
+            }
+        }
+    }
+}
